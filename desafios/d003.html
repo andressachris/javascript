@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antes e Depois</title>
+    <style>
+        body {
+            font: 12pt Arial;
+        }
+
+        input {
+            font-size: 12pt;
+            padding: 30px
+        }
+    </style>
+</head>
+<body>
+    <h1>Antes e Depois</h1>
+    <p>
+        <input type="button" value="Antecessor e Sucessor" onclick="clicar()">
+    </p>
+    <script>
+        function clicar() {
+    var number = Number.parseInt(window.prompt('Digite um número qualquer'))
+    window.alert(`Antes de ${number}, temos o número ${number-1}.
+Depois de ${number}, temos o número ${number+1}.`)
+}
+    </script>
+</body>
+</html>

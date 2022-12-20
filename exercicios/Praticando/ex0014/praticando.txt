@@ -1,0 +1,12 @@
+TABUADA	
+
+1º input:
+Será uma caixa para o preenchimento de um número aleatório ✔
+Se deixar vazia "", terá um alert 'Por favor, digite um número!' ✔
+
+2º input button
+Botão Gerar tabuada que chamará a função gerar() ✔
+
+3º select
+lista, inicialmente terá o texto 'Digite um número acima' ✔
+Quando o 1º input for preenchido e chamar a função gerar, no select irá aparecer a tabuada do número desejado ✔

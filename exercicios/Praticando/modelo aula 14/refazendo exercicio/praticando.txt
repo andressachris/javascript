@@ -1,0 +1,19 @@
+3 input: 
+1º input:
+será o número inicial para a contagem ✔
+Se chamar a função contar, e não tiver nenhum valor, mostrará o texto "Impossível contar!" ✔
+
+2º input:
+será o número final da contagem ✔
+Se chamar a função contar, e não tiver nenhum valor, mostrará o texto "Impossível contar!" ✔
+
+3º input:
+será o padrão a ser seguido para a contagem ✔
+Quando a função contar for chamada e o valor do 3º input for 0, aparecerá um alert com texto 'Passo inválido. Considerando PASSO 1.' Em seguida ele irá rodar a função normalmente com o valor do passo=1. ✔
+
+4º input(button): 
+Terá o value='contar' que chamará a função onclick='contar()' ✔
+
+div#resultado: 
+Terá o texto inicial "Preparando a contagem..." ✔
+Quando a função contar for chamada e estiver correta: mostrará o texto com a contagem inicial à final seguindo o padrão, onde de um número para o outro terá um emoji 👉🏽 e no final terá um emoji 🏴. ✔

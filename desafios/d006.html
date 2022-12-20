@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de temperaturas</title>
+    <style>
+        input {
+            font: 18px normal;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+    <input type="button" value="Converter" onclick="clicar()">
+    <p>Clique no botão acima para iniciar.</p>
+
+    <div id="kelvin"></div>
+    <div id="fahrenheit"></div>
+
+    <script>
+        function clicar() {
+            var celsius = parseInt(window.prompt(`Digite uma temperatura em ºC (Celsius)`))
+            var kelvin = celsius + 273.15
+            document.getElementById('kelvin').innerHTML = `${kelvin} ºF (kelvin)`
+            var fahrenheit = (celsius * 9/5) + 32
+            document.getElementById('fahrenheit').innerHTML = `${fahrenheit} ºF (Fahrenheit)`
+        }
+    </script>
+</body>
+</html>

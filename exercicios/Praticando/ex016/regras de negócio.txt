@@ -1,0 +1,21 @@
+1º Input:
+Caixa vazia que irá receber um número de 1 a 100, podendo ser mais de uma vez.✅
+Se preencher com um número que já existe, fora do parâmetro de 1 a 100 ou deixar a caixa vazia "", irá aparecer o alert 'Valor inválido ou já encontrado na lista.' ✅
+
+2º Input button: 
+Botão Adicionar que chamará a função adicionar()✅
+
+3º select:
+Quando o usuário digitar e chamar a função adicionar(), será adicionado no select 'Valor ${} adicionado.' podendo ser chamada a função várias vezes antes de finalizar.
+
+4º Input button:
+Botão Finalizar que chamará a função finalizar().✅
+Se tentar finalizar com a caixa vazia, aparecerá o alert 'Adicione um número antes de finalizar'✅
+
+5º div#resultado
+div 1: irá mostrar a quantidade de itens no array com a mensagem 'Ao todo, temos var.lenth
+div 2: irá mostrar o maior valor do array com a mensagem 'O maior valor informado foi x'
+div 3: irá mostrar o menor valor do array com a mensagem 'O menor valor informado foi x'
+div 4: irá mostrar a soma com a mensagem 'Somando todos os valores, temos x'
+div 5: irá mostrar a média dos valores com a mensagem 'A média dos valores digitados é x'
+Se adicionar mais 1 número depois de finalizar, o primeiro resultado some.
