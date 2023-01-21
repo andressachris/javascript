@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calcula Troco</title>
     <style>
-        input {
-            font: 12pt Arial;
-            padding: 30px;
+        button {
+            font-size: 1em;
+            padding: 20px;
         }
     </style>
 </head>
@@ -17,16 +17,17 @@
 <body>
     <h1>Calculando o Troco</h1>
     <p>
-        <input type="button" value="Comprar produto" onclick="clicar()">
+        <button onclick="clicar()">Comprar produto</button>
     </p>
     <script>
         function clicar() {
-            var nome = window.prompt('Qual produto você está comprando?')
-            var preço = window.prompt(`Quanto custa o(a) ${nome} que você está comprando?`)
-            var valor = window.prompt(`Qual foi o valor que você deu para pagar o (a) ${nome}?`)
-            window.alert(`Você comprou um(a) ${nome} que custou ${preço}.
-    Deu R$${valor} em dinheiro e vai receber R$${valor - preço} de troco.
-    Volte sempre!`)
+            var produto = window.prompt('Que produto você está comprando?')
+
+            var custo = window.prompt(`Quanto custa ${produto} que você está comprando?`)
+
+            var valor = window.prompt(`Qual foi o valor que você deu para pagar ${produto}?`)
+
+            window.alert(`Você comprou ${produto} que custou R$ ${custo}. <p>Deu R$ ${valor} em dinheiro e vai receber R$ ${valor - custo} de troco.</p> Volte sempre!`)
         } 
     </script>
 </body>
