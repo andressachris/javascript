@@ -1,44 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reajustar Salário</title>
     <style>
-        input {
-            font: 18px normal;
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+        }
+
+        button {
+            font-size: 1em;
             padding: 20px;
         }
     </style>
 </head>
+
 <body>
     <h1>Reajuste salarial</h1>
-    <input type="button" value="Reajustar Salário" onclick="clicar()">
-    <p>Clique no botão acima para iniciar.</p>
-    <div id="resultado"></div>
-    <div id="valorSalarioAtual"></div>
-    <div id="porcentagemReajuste"></div>
-    <div id="salarioReajustado"></div>
+
+    <button onclick="clicar()">Reajustar Salário</button>
+
+    <section id="resultado">
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
 
     <script>
+        function formatar(numero) {
+            return numero.toLocaleString('pt-BR',
+                {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                })
+        }
+
         function clicar() {
-            var nomeFuncionario = window.prompt('Qual é o nome do funcionário?')
+            var nome = window.prompt('Qual é o nome do funcionário?')
 
-            var valorSalarioAtual = parseInt(window.prompt(`Qual é o salário de ${nomeFuncionario}?`))
-            
-            var porcentagemReajuste = parseInt(window.prompt(`O salário de ${nomeFuncionario} vai ser reajustado em qual porcentagem?`)) / 100
+            var salario = Number(window.prompt(`Qual é o salário de ${nome}?`))
 
-            document.getElementById('resultado').innerHTML = `<h2>${nomeFuncionario} recebeu um aumento salarial!</h2>`
+            var porcentagem = Number(window.prompt(`O salário de ${nome} vai ser reajustado em qual porcentagem?`))
 
-            document.getElementById('valorSalarioAtual').innerHTML = `O salário atual era de R$${valorSalarioAtual}.`
+            var aumento = (porcentagem / 100) * salario
 
-            var valorAumentoSalario = valorSalarioAtual * porcentagemReajuste
-            document.getElementById('porcentagemReajuste').innerHTML = `Com um aumento de ${porcentagemReajuste * 100}%, o salário vai aumentar R$${valorAumentoSalario} no próximo mês.`
-
-            var salarioReajustado = valorSalarioAtual + valorAumentoSalario
-            document.getElementById('salarioReajustado').innerHTML = `E a partir daí, ${nomeFuncionario} vai passar a ganhar R$${salarioReajustado}.`    
+            resultado.innerHTML = `<h2>${nome} recebeu um aumento salarial!</h2>
+            <p>O salário atual era de R$ ${formatar(salario)}.</p>
+            <p>Com um aumento de ${porcentagem}%, o salário vai aumentar R$ ${formatar(aumento)} no próximo mês.</p>
+            <p>E a partir daí, ${nome} vai passar a ganhar R$ ${formatar(salario + aumento)}.</p>`
         }
     </script>
 </body>
+
 </html>
