@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,20 +10,28 @@
         body {
             font: 12pt Arial;
         }
+
         button {
-            font-size: 12pt; padding: 30px;
+            font-size: 1em;
+            padding: 30px;
         }
     </style>
 </head>
+
 <body>
     <h1>Desafio das Mensagens</h1>
-<button onclick="clicou('1º')">Botão 1</button>
-<button onclick="clicou('2º')">Botão 2</button>
-<button onclick="clicou('3º')">Botão 3</button>
-<script>
-    function clicou(numBotao) {
-        window.alert(`Você clicou no ${numBotao} botão!`)
-    }
-</script>
+
+    <button onclick="clicou('1º')">Botão 1</button>
+
+    <button onclick="clicou('2º')">Botão 2</button>
+
+    <button onclick="clicou('3º')">Botão 3</button>
+
+    <script>
+        function clicou(numBotao) {
+            window.alert(`Você clicou no ${numBotao} botão!`)
+        }
+    </script>
 </body>
+
 </html>
