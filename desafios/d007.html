@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor R$->US$</title>
     <style>
-        input {
-            font: 20px normal;
+        button {
+            font-size: 1em;
             padding: 20px;
         }
     </style>
 </head>
+
 <body>
-    <h1>Conversor R$ &#8594; US$</h1>
+    <h1>Conversor R$ ➡ US$</h1>
 
-    <input type="button" value="Converter" onclick="clicar()">
-    <p>Clique no botão acima para iniciar.</p>
-    <div id="resultado"></div>
+    <button onclick="clicar()">Converter</button>
 
-<script>
-    var dolar = window.prompt('Antes de mais nada. Quanto está a cotação do dólar agora?')
-    function clicar() {
-        var real = window.prompt(`Quantos R$ você tem na carteira?`)
-        var resultado = real / dolar
-        document.getElementById('resultado').innerHTML = `Com R$${real} reais você terá U$${resultado} dolares.`
-    }
-</script>
+    <section id="resultado">
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
+
+    <Script>
+        function formatarBRL(numero) {
+            return numero.toLocaleString('pt-BR', {
+                currency: "BRL", minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            })
+        }
+        function formatarUSD(numero) {
+            return numero.toLocaleString('pt-BR',
+                {
+                    currency: "USD", minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                })
+        }
+
+        var cotacao = Number(window.prompt('Antes de mais nada, quanto está a cotação do dólar agora?'))
+
+        function clicar() {
+            var real = Number(window.prompt('Quantos R$ você tem na carteira?'))
+
+            resultado.innerHTML = `<p>De acordo a cotação de R$ ${formatarBRL(cotacao)}, com R$ ${formatarBRL(real)} você conseguirá comprar US$ ${formatarUSD(real / cotacao)}. </p>`
+        }
+    </Script>
 </body>
+
 </html>
