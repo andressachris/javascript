@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,26 +8,29 @@
     <title>Antes e Depois</title>
     <style>
         body {
-            font: 12pt Arial;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
-        input {
-            font-size: 12pt;
-            padding: 30px
+        button {
+            font-size: 1em;
+            padding: 20px;
         }
     </style>
 </head>
+
 <body>
     <h1>Antes e Depois</h1>
-    <p>
-        <input type="button" value="Antecessor e Sucessor" onclick="clicar()">
-    </p>
+
+    <button onclick="clicar()">Antecessor e Sucessor</button>
+
     <script>
         function clicar() {
-    var number = Number.parseInt(window.prompt('Digite um número qualquer'))
-    window.alert(`Antes de ${number}, temos o número ${number-1}.
-Depois de ${number}, temos o número ${number+1}.`)
-}
+            var numero = Number(window.prompt('Digite um número qualquer'))
+
+            window.alert(`Antes de ${numero}, temos o número ${numero - 1}.
+            Depois de ${numero}, temos o número ${numero + 1}.`)
+        }
     </script>
 </body>
+
 </html>
