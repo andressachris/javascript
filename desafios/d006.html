@@ -6,27 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor de temperaturas</title>
     <style>
-        input {
-            font: 18px normal;
+        button {
+            font-size: 1em;
             padding: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Conversor de Temperaturas</h1>
-    <input type="button" value="Converter" onclick="clicar()">
-    <p>Clique no botão acima para iniciar.</p>
+    <h1>Conversor de temperaturas</h1>
 
-    <div id="kelvin"></div>
-    <div id="fahrenheit"></div>
+    <button onclick="clicar()">Converter</button>
+
+    <section id="resultado">
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
 
     <script>
+        function formatar(numero) {
+            return numero.toLocaleString('pt-BR') 
+        }
+
         function clicar() {
-            var celsius = parseInt(window.prompt(`Digite uma temperatura em ºC (Celsius)`))
-            var kelvin = celsius + 273.15
-            document.getElementById('kelvin').innerHTML = `${kelvin} ºF (kelvin)`
-            var fahrenheit = (celsius * 9/5) + 32
-            document.getElementById('fahrenheit').innerHTML = `${fahrenheit} ºF (Fahrenheit)`
+            var celsius = Number(window.prompt('Digite uma temperatura em °C (Celsius)'))
+            
+            resultado.innerHTML = `<h2>A temperatura de ${formatar(celsius)}°C, corresponde a:<h2>
+            <p>${formatar(celsius + 273.15)}°K (Kelvin)</p>
+            <p>${formatar((celsius * 9/5) + 32)}°F (Fahrenheit)</p>`
         }
     </script>
 </body>
