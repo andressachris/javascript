@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+    <style>
+        input {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Desafio JS</h1>
+    <p>
+        Exiba a quantidade de letras que possuem o texto inserido ao clicar no botão:
+    </p>
+
+    <textarea name="caixa-de-texto" id="caixa-de-texto" placeholder="Escreva um texto" rows="10" cols="40"
+        required></textarea>
+
+    <button onclick="contar()">Contar caracteres</button>
+
+    <section id="resultado">
+        <p>O resultado aparecerá aqui...</p>
+    </section>
+
+    <script>
+        var resultado = document.getElementById("resultado")
+
+        function contar() {
+            var quantidadeCaracteres = document.getElementById("caixa-de-texto").value
+
+            resultado.innerHTML = `O texto inserido possui ${quantidadeCaracteres.length} unidades de caracteres.`
+        }
+    </script>
+</body>
+
+</html>
