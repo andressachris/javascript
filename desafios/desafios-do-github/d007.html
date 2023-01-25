@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+    <style>
+        div {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Desafio JS</h1>
+
+    <label for="cpf">Preencha com seu CPF:</label>
+
+    <input type="text" placeholder="Insira seu CPF" id="cpf" name="icpf" pattern="[0-9]{11}" maxlength="11"
+        onblur="formataCpf()">
+
+    <div id="resultado"></div>
+
+
+    <script>
+        var resultado = document.getElementById('resultado')
+
+        function formataCpf() {
+            var cpf = document.getElementById('cpf').value
+
+            // retira os caracteres indesejados...
+            cpf = cpf.replace(/[^\d]/g, '')
+
+            // realiza a formatação...
+            cpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4')
+
+            // exibe o resultado...
+            resultado.innerHTML = cpf;
+        }
+    </script>
+</body>
+
+</html>
