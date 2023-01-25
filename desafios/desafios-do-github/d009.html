@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+
+<body>
+    <h1>Desafio JS</h1>
+
+    <input type="text" name="isoma1" id="soma1" placeholder="Digite um número">
+    +
+    <input type="text" name="isoma2" id="soma2" placeholder="Digite outro número">
+    =
+    <button onclick="somar()">Somar</button>
+    <section id="resultado-soma">
+        <p>Resultado da soma:</p>
+    </section>
+
+    <script>
+        var resultadoSoma = document.getElementById('resultado-soma')
+
+        function somar() {
+            var numero1 = Number(document.getElementById('soma1').value)
+            var numero2 = Number(document.getElementById('soma2').value)
+
+            resultadoSoma.innerHTML = `<h2>Resultado da soma:</h2>
+            
+            <p>O resultado da soma entre ${numero1} e ${numero2} é igual a ${numero1 + numero2}.</p>`
+        }
+    </script>
+</body>
+
+</html>
