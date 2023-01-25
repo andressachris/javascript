@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+
+<body>
+    <h1>Desafio JS</h1>
+
+    <p>
+        <input type="text" name="iano-nascimento" id="ano-nascimento" placeholder="Informe seu ano de nascimento"
+            size="25">
+
+        <button onclick="calcular()">Calcular</button>
+    </p>
+
+    <section id="resultado-calculo">
+        <p>Informe seu ano de Nascimento para verificarmos se é maior ou menor de idade.</p>
+    </section>
+
+    <script>
+        var resultadoCalculo = document.getElementById('resultado-calculo')
+
+        function calcular() {
+            var anoNascimento = Number(document.getElementById('ano-nascimento').value)
+            var idade = 2023 - anoNascimento
+
+            if (idade >= 18) {
+                resultadoCalculo.innerHTML = `<h2>Resultado:</h2>
+            
+            <p>Você nasceu em ${anoNascimento}, e possui ${idade} anos de idade, ou ainda irá completar neste ano.</p>`
+            }
+
+        }
+    </script>
+</body>
+
+</html>

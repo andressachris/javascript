@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+
+<body>
+    <h1>Desafio JS</h1>
+
+    <p>
+        <input type="text" name="ipreco-produto" id="preco-produto" placeholder="Digite o valor do produto">
+        - 5% de desconto =
+        <button onclick="calcular()">Calcular</button>
+    </p>
+
+    <section id="resultado-calculo">
+        <p>Digite o valor do produto para saber o seu desconto.</p>
+    </section>
+
+    <script>
+        var resultadoCalculo = document.getElementById('resultado-calculo')
+
+        function calcular() {
+            function formatar(numero) {
+                return numero.toLocaleString('pt-BR',
+                    {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    })
+            }
+            var precoProduto = Number(document.getElementById('preco-produto').value)
+            var desconto = precoProduto * 5 / 100
+
+            resultadoCalculo.innerHTML = `<h2>Resultado do desconto:</h2>
+            
+            <p>Você acaba de ganhar 5% de desconto no produto no valor de R$ ${formatar(precoProduto)}, ficando um desconto de R$ ${formatar(desconto)}, e totalizando no valor final de R$ ${formatar(precoProduto - desconto)}.</p>`
+        }
+    </script>
+</body>
+
+</html>
