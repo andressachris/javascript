@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+
+<body>
+    <h1>Desafio JS</h1>
+    <section id="imagem">
+        <img id="image" src="imagens/lampada.jpg" alt="lampada" onclick="clicar()">
+    </section>
+
+    <script>
+        var imagem = document.getElementById('image')
+
+        function clicar() {
+
+            if (imagem.getAttribute("src") === "imagens/lampada.jpg") {
+                imagem.src = "imagens/lampada-on.jpg";
+                document.getElementById('imagem')
+            }
+            else {
+                imagem.src = "imagens/lampada.jpg";
+                document.getElementById('imagem')
+            }
+        }
+    </script>
+</body>
+
+</html>
