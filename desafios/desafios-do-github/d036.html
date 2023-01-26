@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+
+<body>
+    <h1>Desafio JS</h1>
+
+    <p>
+        Clique para colocar em forma crescente.
+        <button onclick="adicionar()">Adicionar</button>
+    </p>
+
+    <section id="resultado">
+    </section>
+
+    <script>
+        var resultado = document.getElementById('resultado')
+
+        function adicionar() {
+            var numbers = [5, 7, 1, 8, 9]
+            numbers.sort()
+
+            resultado.innerHTML = `${numbers}`
+
+        }
+    </script>
+</body>
+
+</html>
