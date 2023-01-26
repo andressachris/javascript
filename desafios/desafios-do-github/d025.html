@@ -6,22 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio</title>
+    <style>
+        section#resultado {
+            padding: 10px;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Desafio JS</h1>
 
     <section id="resultado">
-        <p>
-            Aqui irá aparecer o resultado.
-        </p>
+        <h2>Tabuada com JavaScript</h2>
     </section>
 
     <script>
         var resultado = document.getElementById('resultado')
 
         for (i = 0; i <= 10; i++) {
-            resultado.innerHTML += `<p>0 x ${i} = 0 </p>`
+
+            for (n = 0; n <= 10; n++) {
+
+                resultado.innerHTML += `<p>${i} x ${n} = ${i * n} </p>`
+            }
+            resultado.innerHTML += "<br>"
         }
     </script>
 </body>
