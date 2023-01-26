@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+
+<body>
+    <h1>Desafio JS</h1>
+
+    <input type="text" name="ijogo" id="jogo" placeholder="Informe o nome de um jogo" size="20">
+
+    <button onclick="procurar()">Procurar</button>
+    </p>
+
+    <section id="resultado">
+        <p>
+            Aqui irá aparecer o resultado.
+        </p>
+    </section>
+
+    <script>
+        var resultado = document.getElementById('resultado')
+
+        function procurar() {
+            var isJogo = document.getElementById('jogo').value
+
+            if (isJogo.indexOf('dota') === -1) {
+                resultado.innerHTML = `
+                <h2>Analisando o jogo informado:</h2>
+        
+                <p>Não contém os caracteres 'dota', portanto É VERDADEIRO ✅`} else {
+                resultado.innerHTML = `
+                <h2>Analisando o jogo informado:</h2>
+        
+                <p>Contém os caracteres 'dota', portanto É FALSO ❌`
+            }
+        }
+    </script>
+</body>
+
+</html>
