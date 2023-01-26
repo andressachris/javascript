@@ -12,7 +12,7 @@
     <h1>Desafio JS</h1>
 
     <p>
-        Clique para descobrir qual o próximo mês.
+        Clique para descobrir o cumprimento do Array.
         <button onclick="descobrir()">Descobrir</button>
     </p>
 
@@ -23,12 +23,9 @@
         var resultado = document.getElementById('resultado')
 
         function descobrir() {
-            var proximoMes = new Date();
-            var mes = proximoMes.getMonth() + 1;
-
-            document.getElementById("resultado").innerHTML = mes;
+            var deuses = ['Aegir', 'Aud', 'Balder']
+            resultado.innerHTML = deuses.length
         }
-
     </script>
 </body>
 
