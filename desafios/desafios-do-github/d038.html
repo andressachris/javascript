@@ -12,7 +12,7 @@
     <h1>Desafio JS</h1>
 
     <p>
-        Clique para colocar em forma de lista.
+        Clique para colocar o array em forma de lista.
         <button onclick="listar()">Listar</button>
     </p>
 
@@ -25,16 +25,13 @@
     <script>
         var resultado = document.getElementById('resultado')
 
+        function listar() {
+            var deuses = ['Aegir', 'Aud', 'Balder', 'Bragi', 'Búri', 'Dag', 'Dellingr']
 
-        var deuses = ['Aegir', 'Aud', 'Balder', 'Bragi', 'Búri', 'Dag', 'Dellingr']
-        var txt = "";
-        deuses.forEach(myFunction);
-        getElementById('resultado').innerHTML = txt;
-
-        function listar(value, index, array) {
-            txt += value + "<li>";
+            for (i = 0; i < deuses.length; i++) {
+                resultado.innerHTML += '<li>' + (deuses[i]);
             }
-        
+        }
     </script>
 </body>
 
