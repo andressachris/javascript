@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+    <style>
+        div#quadrado {
+            position: fixed;
+            background-color: black;
+            width: 200px;
+            height: 200px;
+            border: 3px solid green;
+        }
+
+        img.numero {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Desafio JS</h1>
+    <h2>Desafio do Contador</h2>
+
+    <div id="quadrado">
+        <img src="imagens/contagem-4.png" alt="numero-4" class="numero">
+        <img src="imagens/contagem-3.png" alt="numero-3" class="numero">
+        <img src="imagens/contagem-2.png" alt="numero-2" class="numero">
+        <img src="imagens/contagem-1.png" alt="numero-1" class="numero">
+        <img src="imagens/contagem-5.png" alt="numero-5" class="numero">
+    </div>
+
+    <script>
+        startImageTransition();
+
+        function startImageTransition() {
+            var images = document.getElementsByClassName("numero");
+
+            for (var i = 0; i < images.length; ++i) {
+                images[i] = 1;
+            }
+            var top = 1;
+
+            var cur = images.length - 1;
+
+            setInterval(changeImage, 1000);
+            async function changeImage() {
+
+                var nextImage = (1 + cur) % images.length;
+
+                images[cur].style.zIndex = top + 1;
+                images[nextImage].style.zIndex = top;
+
+                await transition();
+
+                images[cur].style.zIndex = top;
+
+                images[nextImage].style.zIndex = top + 1;
+
+                top = top + 1;
+
+                images[cur].style = 1;
+                cur = nextImage;
+
+            }
+
+            function transition() {
+                return new Promise(function (resolve, reject) {
+                    var del = 0.01;
+
+                    var id = setInterval(changeOpacity, 10);
+
+                    function changeOpacity() {
+                        images[cur].style.opacity -= del;
+                        if (images[cur].style.opacity <= 0) {
+                            clearInterval(id);
+                            resolve();
+                        }
+                    }
+
+                })
+            }
+        }
+
+    </script>
+</body>
+
+</html>
